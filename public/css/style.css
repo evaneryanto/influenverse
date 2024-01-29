@@ -1,0 +1,267 @@
+/* Reset default styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Fixed-position branding */
+.influenverse {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 10px;
+  color: #ffffff;
+  font-family: 'Exo', sans-serif;
+  font-size: 18px;
+  z-index: 9999;
+}
+
+/* Flex container with minimum height */
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	min-height: 100vh;
+}
+
+/* Shared styles for left and right sections */
+.left-section,
+.right-section {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Styling for the left section */
+.left-section {
+	background-color: #417ECC;
+	color: #E2EFFF;
+	text-align: center;
+	position: relative;
+}
+
+/* Absolute-positioned content in the left section */
+.left-content {
+	position: fixed; /* Memfixed kan posisi */
+	top: 50px;
+}
+
+/* Headline styling with top and bottom margin adjustments */
+.left-content h1.top {
+	margin-top: 35px;
+	font-size: 22px;
+	font-weight: 550;
+}
+
+.left-content h1.bottom {
+	margin-top: -10px;
+	font-size: 22px;
+	font-weight: 550;
+}
+
+/* Responsive image styling in the left section */
+.left-section img {
+	width: 100%;
+	height: auto;
+	max-width: 75%;
+	display: block;
+	margin-top: 50px;
+	margin-left: auto;
+    margin-right: auto;
+}
+
+/* Styling for the right section */
+.right-section {
+	background-color: #fff;
+	padding-top: 65px; /* Padding atas untuk section kanan */
+	padding-left: 0px;
+	padding-right: 00px;
+}
+
+/* Login form styling */
+.login-form {
+	width: 100%;
+	max-width: 400px;
+	margin-top: 0x;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+/* Heading style for the login form */
+.login-form h2 {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+/* Label style for form inputs */
+.login-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+/* Input field styling */
+.login-form input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  background-color: #F3F4F6;
+  border: 0px solid;
+  box-sizing: border-box;
+}
+
+/* Button styling */
+.login-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #315E99;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 15px;
+  margin-bottom: 35px;
+}
+
+/* Styling for the 'Or sign in with' section */
+.or-sign-in-with {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+}
+
+/* Styling for the container of social buttons */
+.social-buttons-container {
+  display: flex;
+}
+
+/* Styling for individual social buttons */
+.social-button {
+  background-color: #F3F4F6;
+  padding: 10px 45px;
+  margin-top: 10px;
+  margin-right: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: #4C4C4C;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Styling terms & policy 
+#terms-policy-checkbox {
+	vertical-align: middle;
+	margin-right: 5px;
+}
+
+#terms-policy-label {
+	display: inline-block;
+	vertical-align: middle;
+} */
+
+/* Styling for the 'Be part of us' section */
+.be-part-of-us {
+  text-align: center;
+  font-size: 12px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+/* Styling for the registration and influencer login links */
+.dont-have-account-yet,
+.influencer-login-regis {
+  margin-top: -5px;
+  display: block;
+}
+
+/* Styling for the links in the 'Be part of us' section */
+.be-part-of-us a {
+  color: #1A1A1A;
+  text-decoration: none;
+  border-bottom: 1px solid #1A1A1A;
+}
+
+/* Hover effect for the links in the 'Be part of us' section */
+.be-part-of-us a:hover {
+  color: #606060;
+}
+
+/* Media Queries for responsiveness */
+@media screen and (max-width: 1200px) {
+  .left-section img {
+    max-width: 80%;
+  }
+
+  .left-content h1.top,
+  .left-content h1.bottom {
+    font-size: 18px;
+    margin-top: 25px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+	.container {
+		flex-direction: column;
+	}
+
+	.left-section,
+	.right-section {
+		flex: none;
+		width: 100%;
+	}
+
+	.left-content h1.top,
+	.left-content h1.bottom {
+		font-size: 18px;
+		margin-top: 15px;
+		display: none; /* Menyembunyikan konten */
+	}
+
+	.left-section img {
+		max-width: 100%;
+		margin-top: 20px;
+		display: none; /* Menyembunyikan gambar */
+	}
+}
+
+/* Responsive elemen */
+@media screen and (max-width: 768px) {
+  .login-form {
+    max-width: 100%;
+    margin-top: -40px;
+    padding-top: 0px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .left-content h1.top,
+  .left-content h1.bottom {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .left-section img {
+    max-width: 100%;
+    margin-top: 10px;
+  }
+
+  .left-content h1.top,
+  .left-content h1.bottom {
+    font-size: 14px;
+    margin-top: 5px;
+  }
+}
+
+/* Media queries untuk mode responsif mobile */
+@media only screen and (max-width: 768px) {
+    /* Selector untuk gambar yang ingin disembunyikan */
+    img {
+        display: none; /* Menyembunyikan gambar */
+    }
+}
