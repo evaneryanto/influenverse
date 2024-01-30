@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,10 +18,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login_influencer', function(){
-    return view('auth/login_influencer');
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/login_influencer', function () {
+        return view('login_influencer');
+    })->name('login_influencer');
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/login_brand', function(){
-    return view('auth/login_brand');
-});
+require __DIR__.'/auth.php';
+
