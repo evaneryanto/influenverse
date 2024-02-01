@@ -23,6 +23,16 @@ class RegisteredUserController extends Controller
         return view('auth.register');
     }
 
+    public function signup_influencer(): View
+    {
+        return view('auth.register_influencer');
+    }
+
+    public function signup_brand(): View
+    {
+        return view('auth.register_brand');
+    }
+
     /**
      * Handle an incoming registration request.
      *
@@ -30,21 +40,29 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
+
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
+            'username' => ['required', 'string', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
+
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
+            'username' => $request->username,
             'password' => Hash::make($request->password),
+            'role' => $request->role,
         ]);
 
+        
         event(new Registered($user));
 
         Auth::login($user);
+         
+      
 
         return redirect(RouteServiceProvider::HOME);
     }
