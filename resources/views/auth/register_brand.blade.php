@@ -1,25 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-	<!-- Meta tags for character set and viewport -->
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- Title of the website -->
-	<title>Influenverse - Register</title>
-	<!-- External CSS file -->
-	<link href="{{ asset('css/style.css') }}" rel="stylesheet">
-	<!-- Fonts from Google Fonts -->
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Exo:wght@700&display=swap" rel="stylesheet">
-	<!-- Icon fontawesome -->
-	<script
-		src="https://kit.fontawesome.com/3c21f5a91b.js"
-		crossorigin="anonymous" >
-	</script>
-</head>
-
-<body>
+<x-guest-layout>
 	<!-- Main container for the login form -->
 	<div class="container">
 		<!-- Left section with branding -->
@@ -28,11 +7,11 @@
 				<!-- Brand name -->
 				<span class="influenverse">Influenverse</span>
 				<!-- Headline 1 -->
-				<h1 class="top">Join and Explore</h1>
+				<h1 class="top">Be Part of</h1>
 				<!-- Headline 2 -->
-				<h1 class="bottom">the World of Influencers</h1>
+				<h1 class="bottom">Our Creativity Community</h1>
 			<!-- Image for branding -->
-			<img  align="center" src="{{ asset('img/register_brand.png') }}" alt="Image">
+			<img align="center" src="{{ asset('img/register_brand.png') }}" alt="Image">
 			</div>
 		</div>
 		
@@ -41,30 +20,40 @@
 			<div class="login-form">
 				<!-- Login form heading -->
 				<h2>Create an Account</h2>
-				<form action="#" method="#">
+				<form action="{{ route('register') }}" method="POST">
+					@csrf
 					<div>
-						<label for="fullname">Full Name:</label>
-						<input type="text" id="fullname" name="fullname" required><br>
+						<x-input-label for="name" :value="__('Name')" />
+						<x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" placeholder="Your name" required autofocus autocomplete="name" />
+						<x-input-error :messages="$errors->get('name')" class="mt-2" />
 					</div>
 					<div>
-						<label for="username">Username:</label>
-						<input type="text" id="username" name="username" required><br>
+						<x-input-label for="username" :value="__('Username')" />
+						<x-text-input id="username" class="block mt-1 w-full" type="username" name="username" :value="old('username')" placeholder="username123" required autocomplete="username" />
+						<x-input-error :messages="$errors->get('username')" class="mt-2" />
 					</div>
 					<div>
-						<label for="email">Email:</label>
-						<input type="email" id="email" name="email"
-						placeholder="example.email@gmail.com" required><br>
+						<x-input-label for="email" :value="__('Email')" />
+						<x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" placeholder="example.email@gmail.com" required autocomplete="email" />
+						<x-input-error :messages="$errors->get('email')" class="mt-2" />
 					</div>
 					<div>
-						<label for="password">Password:</label>
-						<input type="password" id="password" name="password" 
-						placeholder="Enter at least 8+ characters" required><br>
+						<x-input-label for="password" :value="__('Password')" />
+						<x-text-input id="password" class="block mt-1 w-full"
+										type="password"
+										name="password"
+										required autocomplete="new-password"
+										placeholder="Enter at least 8+ characters" />
+						<x-input-error :messages="$errors->get('password')" class="mt-2" />
 					</div>
 					<div>
-						<label for="confirm-password">Confirm Password:</label>
-						<input type="password" id="confirm-password" name="password_confirmation" 
-						placeholder="Enter at least 8+ characters" required><br>
+						<x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+						<x-text-input id="password_confirmation" class="block mt-1 w-full"
+										type="password"
+										name="password_confirmation" placeholder="Retype your password" required autocomplete="new-password" />
+						<x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
 					</div>
+					<input type="hidden" name="role" value="brand">
 					
 					<!-- Submit button -->
 					<button type="submit">Sign Up</button>
@@ -87,26 +76,26 @@
 					</div>
 
 					<!--- Confirmation ReCaptcHA, Term & Policy --->
-					{{-- <div>
+					<div>
 						<!-- Google reCAPTCHA -->
 						<div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY" required></div>
 						<!---- "YOUR_SITE_KEY mesti diganti dengan RReCaptCHa yang sudah ditautkan ---->
-					</div> --}}
+					</div>
 					<!--- term & policy -->
 					<div>
 					<span>
-						<input type="checkbox" id="terms-policy-checkbox" required>
+						<input type="checkbox" id="terms-policy-checkbox" style="width: 5px; height: 5px;" required>
 						<label for="terms-policy-checkbox" id="terms-policy-label" >I accept the Terms & Policy</label>
 					</span>
 					</div>
 					
 					<!-- Registration and influencer login links -->
 					<div class="be-part-of-us">
-						<span class="dont-have-account-yet">Have account yet?
-						<a href="login-brand.html">Login now</a></span><br>
+						<span class="dont-have-account-yet">Already have an account?
+						<a href="{{url('login_brand')}}">Login now</a></span><br>
 						
-						<span class="influencer-login-regis">Are you influencer?
-						<a href="influenverse-register-influencer.html">Sign Up here</a></span>
+						<span class="influencer-login-regis">Be part of us!
+						<a href="{{url('signup_influencer')}}">Sign up as influencer</a></span>
 					</div>
 				</form>
 				<!-- Include Google reCAPTCHA script -->
@@ -114,6 +103,4 @@
 			</div>
 		</div>
 	</div>
-</body>
-
-</html>
+</x-guest-layout>
