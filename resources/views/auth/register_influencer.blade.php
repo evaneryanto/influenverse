@@ -66,7 +66,7 @@
 								<a href="https://www.google.com" class="social-button">
 									<i class="fab fa-google"></i>
 								</a>
-								<a href="https://www.facebook.com" class="social-button">
+								<a href="{{ url('/auth/facebook') }}" class="social-button">
 									<i class="fab fa-facebook"></i>
 								</a>
 								<a href="https://www.apple.com" class="social-button">
