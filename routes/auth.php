@@ -25,6 +25,14 @@ Route::middleware('guest')->group(function () {
     Route::get('login', [AuthenticatedSessionController::class, 'create'])
                 ->name('login');
 
+    Route::get('/login_influencer', function () {
+        return view('auth/login_influencer');
+    })->name('auth/login_influencer');
+
+    Route::get('/login_brand', function () {
+        return view('auth/login_brand');
+    })->name('login_brand');
+
     Route::post('login', [AuthenticatedSessionController::class, 'store']);
 
     Route::get('forgot-password', [PasswordResetLinkController::class, 'create'])
