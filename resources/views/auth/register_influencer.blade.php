@@ -63,14 +63,14 @@
 							<span class="txt2">Or register with</span>
 							<div class="social-buttons-container">
 								<!-- Social buttons -->
-								<a href="https://www.google.com" class="social-button">
+								<a href="{{ url('/auth/google') }}" class="social-button">
 									<i class="fab fa-google"></i>
 								</a>
 								<a href="{{ url('/auth/facebook') }}" class="social-button">
 									<i class="fab fa-facebook"></i>
 								</a>
-								<a href="https://www.apple.com" class="social-button">
-									<i class="fab fa-apple"></i>
+								<a href="{{ url('/auth/instagram') }}" class="social-button">
+									<i class="fab fa-instagram"></i>
 								</a>
 							</div>
 						</div>
