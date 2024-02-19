@@ -37,5 +37,24 @@ return [
         'redirect'      => env('FB_URL'),
     ],
 
+    'google' => [
+        'client_id'     => env('GOOGLE_CLIENT_ID'),
+        'client_secret' => env('GOOGLE_CLIENT_SECRET'),
+        'redirect'      => env('GOOGLE_REDIRECT_URI'),
+    ],
+
+    'instagram' => [
+        'client_id'     => env('IG_ID'),
+        'client_secret' => env('IG_SECRET'),
+        'redirect'      => env('IG_URL'),
+    ],
+
+    'twitter' => [
+        'client_id'     => env('TWT_ID'),
+        'client_secret' => env('TWT_SECRET'),
+        'redirect'      => env('TWT_URL'),
+        'oauth' => 2
+    ],
+
 
 ];
