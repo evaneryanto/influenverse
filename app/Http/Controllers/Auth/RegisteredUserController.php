@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -13,7 +14,6 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
 use Laravel\Socialite\Facades\Socialite;
-
 
 class RegisteredUserController extends Controller
 {
@@ -26,12 +26,14 @@ class RegisteredUserController extends Controller
     }
 
     public function signup_influencer(): View
-    {
+
+    {  
         return view('auth.register_influencer');
     }
 
     public function signup_brand(): View
     {
+        
         return view('auth.register_brand');
     }
 
