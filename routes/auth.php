@@ -16,7 +16,7 @@ Route::middleware('guest')->group(function () {
     Route::get('register', [RegisteredUserController::class, 'create'])
                 ->name('register');
     
-    Route::get('auth/{provider}', [RegisteredUserController::class, 'redirectToProvider']);
+    Route::get('/auth/{provider}', [RegisteredUserController::class, 'redirectToProvider']);
 
     Route::get('auth/{provider}/callback', [RegisteredUserController::class, 'handleProviderCallback']);
         
@@ -32,7 +32,7 @@ Route::middleware('guest')->group(function () {
 
     Route::get('/login_influencer', function () {
         return view('auth/login_influencer');
-    })->name('auth/login_influencer');
+    })->name('login_influencer');
 
     Route::get('/login_brand', function () {
         return view('auth/login_brand');
