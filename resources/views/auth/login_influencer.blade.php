@@ -17,7 +17,7 @@
   <div class="right-section">
     <div class="login-form">
       <!-- Login form heading -->
-      <h2>Login</h2>
+      <h2 style="font-weight: 700;">Login</h2>
   <!-- Session Status -->
   <x-auth-session-status class="mb-4" :status="session('status')" />
 
