@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->date('birth_date');
             $table->string('gender');
+            $table->string('phone_number');
             $table->text('about_me');
             $table->string('profile_picture_path')->nullable();
             $table->string('address');
