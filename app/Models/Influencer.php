@@ -17,5 +17,7 @@ class Influencer extends Model
         'is_married',
         'province_id',
         'user_id',
+        'phone_number'
     ];
+
 }
