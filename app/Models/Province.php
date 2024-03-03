@@ -9,5 +9,10 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Province extends Model
 {
     use HasFactory;
+    
+    public function influencers(): HasMany
+    {
+        return $this->hasMany(Influencer::class);
+    }
 
 }
