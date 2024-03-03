@@ -59,6 +59,7 @@
             <input hidden value="{{ $user_id}}" for="user_id" name="user_id">
             <button type="submit" class="btn btn-primary">submit</button>
         </form>
+        <img @if(!is_null($influencer)) src="{{ asset($influencer->profile_picture_path) }}" @endif alt="Image">
 {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
     console.log("hello");
