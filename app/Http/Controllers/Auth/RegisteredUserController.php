@@ -68,7 +68,7 @@ class RegisteredUserController extends Controller
          
       
 
-        return redirect(RouteServiceProvider::HOME);
+        return redirect()->route('fill_profile');
     }
 
     public function redirectToProvider($provider)
