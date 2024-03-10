@@ -23,7 +23,7 @@ class InfluencerBioRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'user_id' => 'required|string|max:225',
+            'user_id' => 'required',
             'province_id' => 'required',
             'birth_date' => 'required',
             'gender' => 'required',
