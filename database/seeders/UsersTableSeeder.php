@@ -27,6 +27,34 @@ class UsersTableSeeder extends Seeder
                 'password' => bcrypt('abcd1234'),
                 'role' => 'brand'
             ],
+            [
+                'name' => 'User Influencer 3',
+                'email' => 'influencer3@example.com',
+                'username' => 'influencer03',
+                'password' => bcrypt('abcd1234'),
+                'role' => 'influencer'
+            ],
+            [
+                'name' => 'User Brand 3',
+                'email' => 'brand3@example.com',
+                'username' => 'brand03',
+                'password' => bcrypt('abcd1234'),
+                'role' => 'brand'
+            ],
+            [
+                'name' => 'User Influencer 2',
+                'email' => 'influencer2@example.com',
+                'username' => 'influencer02',
+                'password' => bcrypt('abcd1234'),
+                'role' => 'influencer'
+            ],
+            [
+                'name' => 'User Brand 2',
+                'email' => 'brand2@example.com',
+                'username' => 'brand02',
+                'password' => bcrypt('abcd1234'),
+                'role' => 'brand'
+            ],
 
         ])->each(fn ($user) => \App\Models\User::factory()->create($user));
     }
