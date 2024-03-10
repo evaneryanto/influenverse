@@ -39,21 +39,15 @@
             <li class="bar-item"><a href="#">Review</a></li>
         </ul>
         <ul class="bar-list">
-            <li class="bar-item active"><a href="#">Instagram</a></li>
-            <li class="bar-item"><a href="#">Tiktok</a></li>
+            <li class="bar-item "><a href="#">Instagram</a></li>
+            <li class="bar-item active"><a href="#">Tiktok</a></li>
             <li class="bar-item"><a href="#">Youtube</a></li>
             <li class="bar-item"><a href="#">Other</a></li>
         </ul>
         <div class="bar-container-ig">
       
         <ul class="bar-list">
-            <li class="bar-item-ig"><a href="#"><img src="logo.png" alt="">Instagram Video Post</Video></a>
-            <p>IDR.123.456/Content</p></li>
-            <li class="bar-item-ig"><a href="#">Instagram Story</a>
-            <p>IDR.123.456/Content</p></li>
-        </ul>
-        <ul class="bar-list">
-            <li class="bar-item-ig"><a href="#">Instagram Post</a>
+            <li class="bar-item-ig"><a href="#">Tiktok Video Post</a>
             <p>IDR.123.456/Content</p></li>
             <li class="bar-item-ig"><a href="#">Add New Rate Card</a>
             </li>
