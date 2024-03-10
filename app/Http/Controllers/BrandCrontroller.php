@@ -17,9 +17,5 @@ class BrandCrontroller extends Controller
 
         ];
         return response()->json($data);
-    }
-
-
-    
-     
+    } 
 }
