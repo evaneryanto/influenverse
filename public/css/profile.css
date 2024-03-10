@@ -1,0 +1,197 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.profile-container {
+  width: 500px;
+  margin: 50px 10px;
+  border: 1px solid #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+  padding: 20px;
+  background-color: #315E99;
+  text-align: center;
+  border-radius: 5px;
+}
+.profile-username{
+  padding: 20px;
+  
+  text-align: center;
+}
+
+.profile-header img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.profile-header h1 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.profile-header p {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.profile-bio {
+  padding: 10px;
+}
+
+.profile-stats {
+  padding: 20px;
+  border-top: 1px solid #ccc;
+}
+
+.profile-stats ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile-stats ul li {
+  padding: 10px;
+  text-align: center;
+}
+
+.profile-stats ul li span {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.profile-actions {
+  padding: 20px;
+  border-top: 1px solid #ccc;
+ 
+}
+
+.profile-actions button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+/* --------------------------------------------- */
+
+
+
+/* Gaya container utama */
+.bar-container {
+ 
+  padding: 50 10px;
+  
+
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px; /* Sesuaikan tinggi sesuai kebutuhan */
+
+}
+
+/* Gaya baris tombol */
+.bar-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* Sesuaikan lebar sesuai kebutuhan */
+}
+
+/* Gaya daftar tombol */
+.bar-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+/* Gaya tombol */
+.bar-item {
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 5px;
+  text-align: center;
+  color: #333;
+  width: 150px; /* Sesuaikan lebar sesuai kebutuhan */
+}
+
+
+/* Gaya tombol aktif (opsional) */
+.bar-item.active {
+  border-bottom: 3px solid #000; /* Sesuaikan warna border aktif */
+  color: #fff;
+}
+
+
+
+
+/* -------------------------------------- */
+/* Style the bar container */
+.bar-container-ig {
+
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Style the left bar */
+.bar-left-ig {
+  display: flex;
+  align-items: center;
+}
+
+.bar-left-ig a {
+  text-decoration: none;
+}
+
+.bar-left-ig img {
+  width: 100px;
+}
+
+/* Style the right bar */
+.bar-right-ig {
+  display: flex;
+}
+
+/* Style the bar list */
+.bar-list-ig {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+/* Style the bar items */
+.bar-item-ig {
+  padding: 15px 74px;
+  font-weight: bold;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 5px;
+  text-align: center;
+  color: #333;
+
+}
+
+.bar-item-ig a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.bar-item-ig a:hover {
+  color: #000;
+}
