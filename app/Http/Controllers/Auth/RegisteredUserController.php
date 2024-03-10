@@ -26,7 +26,6 @@ class RegisteredUserController extends Controller
     }
 
     public function signup_influencer(): View
-
     {  
         return view('auth.register_influencer');
     }
