@@ -1,0 +1,436 @@
+/* Reset default styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Fixed-position branding */
+.influenverse {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 10px;
+  color: #ffffff;
+  font-family: 'Exo', sans-serif;
+  font-size: 18px;
+  z-index: 9999;
+}
+
+/* Flex container with minimum height */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100vh;
+}
+
+/* Shared styles for left and right sections */
+.left-section,
+.right-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Styling for the left section */
+.left-section {
+  background-color: #417ECC;
+  color: #E2EFFF;
+  text-align: center;
+  position: relative;
+}
+
+/* Absolute-positioned content in the left section */
+.left-content {
+  position: absolute;
+  top: 20px;
+}
+
+/* Headline styling with top and bottom margin adjustments */
+.left-content h1.top {
+  margin-top: 35px;
+  font-size: 22px;
+  font-weight: 550;
+}
+
+.left-content h1.bottom {
+  margin-top: -10px;
+  font-size: 22px;
+  font-weight: 550;
+}
+
+/* Responsive image styling in the left section */
+.left-section img {
+  width: 100%;
+  height: auto;
+  max-width: 50%;
+  display: block;
+  margin-top: 50px;
+}
+
+/* Styling for the right section */
+.right-section {
+  background-color: #fff;
+}
+
+/* Login form styling */
+.login-form {
+  width: 100%;
+  max-width: 400px;
+  margin-top: -50px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Heading style for the login form */
+.login-form h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Label style for form inputs */
+.login-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+/* Input field styling */
+.login-form input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  background-color: #F3F4F6;
+  border: 0px solid;
+  box-sizing: border-box;
+}
+
+/* Button styling */
+.login-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #315E99;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 15px;
+  margin-bottom: 35px;
+}
+
+/* Styling for the 'Or sign in with' section */
+.or-sign-in-with {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+}
+
+/* Styling for the container of social buttons */
+.social-buttons-container {
+  display: flex;
+}
+
+/* Styling for individual social buttons */
+.social-button {
+  background-color: #F3F4F6;
+  padding: 10px 45px;
+  margin-top: 10px;
+  margin-right: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: #4C4C4C;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Styling for the 'Be part of us' section */
+.be-part-of-us {
+  text-align: center;
+  font-size: 12px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+/* Styling for the registration and influencer login links */
+.dont-have-account-yet,
+.influencer-login {
+  margin-top: -5px;
+  display: block;
+}
+
+/* Styling for the links in the 'Be part of us' section */
+.be-part-of-us a {
+  color: #1A1A1A;
+  text-decoration: none;
+  border-bottom: 1px solid #1A1A1A;
+}
+
+/* Hover effect for the links in the 'Be part of us' section */
+.be-part-of-us a:hover {
+  color: #606060;
+}
+
+/* Media Queries for responsiveness */
+@media screen and (max-width: 1200px) {
+  .left-section img {
+    max-width: 80%;
+  }
+
+  .left-content h1.top,
+  .left-content h1.bottom {
+    font-size: 18px;
+    margin-top: 25px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left-section,
+  .right-section {
+    flex: none;
+    width: 100%;
+  }
+
+  .left-content h1.top,
+  .left-content h1.bottom {
+    font-size: 18px;
+    margin-top: 15px;
+  }
+
+  .left-section img {
+    max-width: 100%;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .login-form {
+    max-width: 100%;
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .left-content h1.top,
+  .left-content h1.bottom {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .left-section img {
+    max-width: 100%;
+    margin-top: 10px;
+  }
+
+  .left-content h1.top,
+  .left-content h1.bottom {
+    font-size: 14px;
+    margin-top: 5px;
+  }
+}
+
+/* dashboard */
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  display: flex;
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 110px;
+  height: 130vh;
+  padding:  0 1.7rem;
+  color: #05cf05;
+  overflow: hidden;
+  transition: all 0.5s linear;
+  background: #315E99;
+}
+
+.sidebar:hover {
+  width: 240px;
+  transition: 0.5s;
+}
+
+.logo {
+  height: auto; /* Remove fixed height */
+  padding: 16px;
+  color: white;
+  display: flex; /* Add flex display */
+  align-items: center;
+}
+
+.logo img {
+  height: 50px; /* Keep image size */
+  width: auto; /* Adjust width automatically */
+  margin-right: 10px; /* Add some spacing between image and text */
+}
+
+.menu {
+  height: 88%;
+  position: relative;
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  padding: 1rem;
+  margin: 8px 0;
+  border-radius: 8px;
+  transition: all 0.5 ease-in-out;
+}
+
+.menu li:hover , .active{
+  background: #e0e0e058;
+}
+
+.menu a {
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.menu a span {
+  overflow: hidden;
+}
+
+.menu a i {
+  font-size: 1.2rem;
+}
+
+.keluar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.main-content {
+  position: relative;
+  background: #fff;
+  width: 100%;
+  padding: 1rem;
+}
+
+.header-wrapper img{
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px 2rem;
+  margin-bottom: 1rem;
+}
+
+.header-title {
+  color: rgba(113, 99, 100, 255);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.search-box {
+  background: rgba(237, 237, 237);
+  border-radius: 15px;
+  color: rgba(113, 99, 186, 255);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 20px;
+  flex: 1;
+  margin: 0 auto;
+}
+
+.search-box input {
+  background: transparent;
+  padding: 10px;
+}
+
+.search-box i {
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  color: #315E99;
+}
+
+.search-box i:hover {
+  transform: scale(1.3);
+}
+
+.settings-button, 
+.notification-button, 
+.profile-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px; 
+  border-radius: 50%; 
+  overflow: hidden;
+  margin-left: 10px;
+}
+
+.settings-button i {
+  font-size: 24px;
+  color: #333; 
+}
+
+.notification-button i {
+  font-size: 24px;
+  color: #333; 
+}
+
+
+.profile-button i {
+  font-size: 24px;
+  color: #333; 
+}
+
+
+
+
+/* Style the main content area */
+.hero {
+  text-align: left;
+}
+
+.hero h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2em;
+}
