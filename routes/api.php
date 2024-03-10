@@ -24,3 +24,4 @@ Route::middleware('auth:sanctum')->get('/bio/influencers', [\App\Http\Controller
 Route::middleware('auth:sanctum')->post('/bio/influencers', [\App\Http\Controllers\InfluencerBioController::class, 'store']);
 Route::middleware('auth:sanctum')->post('/bio/influencers/{id}', [\App\Http\Controllers\InfluencerBioController::class, 'update']); // change to put method later
 Route::middleware('auth:sanctum')->delete('/bio/influencers/{id}', [\App\Http\Controllers\InfluencerBioController::class, 'destroy']);
+Route::middleware('auth:sanctum')->get('/bio/brands',[\App\Http\Controllers\BrandCrontroller::class, 'index']);
