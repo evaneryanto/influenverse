@@ -16,9 +16,9 @@
             
             </div>
             <div class="profile-username">
-                <h1>@Username</h1>
-                <p>Influencer</p>
-                <p>Member since 2024</p>
+                <h1>{{'@'.$user['username']}}</h1>
+                <p>{{$user['role']}}</p>
+                <p>Member since {{$user['year_created']}}</p>
             </div>
             <div class="profile-bio">
                 <h1>About me</h1>
@@ -28,7 +28,7 @@
             </div>
             <div class="profile-actions">
                 <h2>Profile Link</h2>
-                <a href="https://www.example.com">Click here to visit example.com</a>
+                <a href="">https://www.influenverse.com/{{'@'.$user['username']}}</a>
             </div>
         </div>
         <div class="bar-container">
@@ -69,13 +69,13 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
             <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
                 <div class="max-w-xl">
-                    @include('profile.partials.update-profile-information-form')
+                    {{-- @include('profile.partials.update-profile-information-form') --}}
                 </div>
             </div>
 
             <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
                 <div class="max-w-xl">
-                    @include('profile.partials.update-password-form')
+                    {{-- @include('profile.partials.update-password-form') --}}
                 </div>
             </div>
 
