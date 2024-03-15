@@ -6,7 +6,7 @@
         </div>
         <ul class="menu">
             <li class="active">
-                <a href="#">
+                <a href="{{ route('dashboard') }}">
                     <i class="fas fa-tachometer-alt"></i>
                     <span>Dasboard</span>
                 </a>
@@ -37,10 +37,15 @@
                 </a>
             </li>
             <li class="keluar">
-                <a href="{{ route('logout') }}">
-                    <i class="fas fa-sign-out-alt"></i>
-                    <span>Keluar</span>
-                </a>
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" style="background-color: inherit">
+                    <a>
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span style="display: inline-block; overflow:hidden">Keluar</span>
+                    </a>
+                    </button>
+                </form>
             </li>
         </ul>
     </div>
