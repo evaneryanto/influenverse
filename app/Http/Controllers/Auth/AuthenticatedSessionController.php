@@ -31,15 +31,21 @@ class AuthenticatedSessionController extends Controller
 
         $user = Auth::user();
 
-        $data = [
-            'username' => $user->username,
-            'name' => $user->name,
-            'role' => $user->role,
-            'id' => $user->id,
-            'email' => $user->email,
-        ];
+        // $data = [
+        //     'username' => $user->username,
+        //     'name' => $user->name,
+        //     'role' => $user->role,
+        //     'id' => $user->id,
+        //     'email' => $user->email,
+        // ];
 
-        return response()->json($data);
+        // return response()->json($data);
+
+        if($user->role == 'influencer'){
+            return redirect()->route('dashboard');
+        } else if($user->role == 'brand'){
+            return redirect()->route('dashboard');
+        }
 
         // return redirect()->intended(RouteServiceProvider::HOME);
     }
@@ -55,8 +61,8 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
 
-        // return redirect('/');
+        return redirect('/');
 
-        return response()->json(['status' => 'success']);
+        // return response()->json(['status' => 'success']);
     }
 }
