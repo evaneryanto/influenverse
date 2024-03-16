@@ -39,11 +39,9 @@
             <li class="keluar">
                 <form action="{{ route('logout') }}" method="POST">
                     @csrf
-                    <button type="submit" style="background-color: inherit">
-                    <a>
+                    <button type="submit" id="logout">
                         <i class="fas fa-sign-out-alt"></i>
-                        <span style="display: inline-block; overflow:hidden">Keluar</span>
-                    </a>
+                        <span>Keluar</span>
                     </button>
                 </form>
             </li>
