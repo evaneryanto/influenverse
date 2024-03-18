@@ -66,9 +66,13 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
          
-      
+        if(Auth::user()->role == 'influencer'){
+            return redirect()->route('influencer.dashboard');
+        } else if(Auth::user()->role == 'brand'){
+            return redirect()->route('dashboard');
+        }
 
-        return redirect()->route('fill_profile');
+        // return redirect()->route('fill_profile');
     }
 
     public function redirectToProvider($provider)
