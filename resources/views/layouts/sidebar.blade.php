@@ -6,13 +6,13 @@
         </div>
         <ul class="menu">
             <li class="active">
-                <a href="{{ route('dashboard') }}">
+                <a href="{{ route('influencer.dashboard') }}">
                     <i class="fas fa-tachometer-alt"></i>
                     <span>Dasboard</span>
                 </a>
             </li>
             <li>
-                <a href="{{ route('profile.edit') }}" >
+                <a href="{{ route('influencer.profile.edit') }}" >
                 <i class="fas fa-user"></i>
                 <span>Profile</span>
                 </a>
@@ -37,12 +37,13 @@
                 </a>
             </li>
             <li class="keluar">
-                <form action="{{ route('logout') }}" method="POST">
+                <form action="{{ route('logout') }}" method="POST" id="logout-form">
                     @csrf
-                    <button type="submit" id="logout">
+                    <a onclick="document.getElementById('logout-form').submit();">
                         <i class="fas fa-sign-out-alt"></i>
                         <span>Keluar</span>
-                    </button>
+                    </a>
+    
                 </form>
             </li>
         </ul>
