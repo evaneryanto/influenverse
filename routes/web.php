@@ -19,13 +19,10 @@ Route::get('/', function () {
     return view('auth/login_influencer');
 });
 
-Route::get('/coba', function () {
-    return view('coba');
-});
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 
 Route::get('/edit_tiktok', function () {
@@ -40,21 +37,22 @@ Route::get('/find', function() {
     return view('find');
 });
 
-Route::middleware('auth')->group(function () {
-    Route::get('/login_influencer', function () {
-        return view('login_influencer');
-    })->name('login_influencer');
-    Route::get('/profile', [InfluencerProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    // Route::get('/dashboard', function () {
-    //     return view('dashboard');
-    // })->name('dashboard');
+Route::middleware(['auth', 'can:check_influencer'])->group(function () {
+    // Route::get('/login_influencer', function () {
+    //     return view('login_influencer');
+    // })->name('login_influencer');
+    Route::get('/influencer/profile', [InfluencerProfileController::class, 'edit'])->name('influencer.profile.edit');
+    // Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    // Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    // Route::get('/profile', function(){
-    //     return view('profile.edit');
-    // })->name('profile');
+    Route::get('/influencer/dashboard', function () {
+        return view('dashboard');
+    })->name('influencer.dashboard');
+
 });
+
+
+
 
 require __DIR__.'/auth.php';
 
