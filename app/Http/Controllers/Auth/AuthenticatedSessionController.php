@@ -40,9 +40,8 @@ class AuthenticatedSessionController extends Controller
         // ];
 
         // return response()->json($data);
-
         if($user->role == 'influencer'){
-            return redirect()->route('dashboard');
+            return redirect()->route('influencer.dashboard');
         } else if($user->role == 'brand'){
             return redirect()->route('dashboard');
         }
