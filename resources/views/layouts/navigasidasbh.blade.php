@@ -15,7 +15,7 @@
                 <div class="notification-button">
                     <i class="fas fa-bell"></i>
                 </div>
-               <a href="{{ route('profile.edit') }}" > 
+               <a href="{{ route('influencer.profile.edit') }}" > 
                <button class="profile-button" >
                     <i class="fas fa-user"></i>
                 </button>
