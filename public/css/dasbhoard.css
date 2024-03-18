@@ -327,20 +327,8 @@ body {
   width: 100%;
 }
 
-#logout {
-  background-color: inherit;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: block;
-  color: white;
-  white-space: nowrap;
-  font-size: 14px;
-  display: flex;
-  gap: 1.5rem;
-}
-
-#logout i {
-  font-size: 1.2rem;
+#logout-form a:hover {
+  cursor: pointer;
 }
 
 .main-content {
