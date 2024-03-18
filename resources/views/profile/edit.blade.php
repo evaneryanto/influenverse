@@ -22,9 +22,14 @@
             </div>
             <div class="profile-bio">
                 <h1>About me</h1>
-                <p>Ullamco veniam culpa excepteur id duis aliquip
+                @if (!is_null($influencer))
+                <p>{{$influencer->about_me}}</p>
+                @else
+                <p>Edit this section in the bio form </p>    
+                @endif
+                {{-- <p>Ullamco veniam culpa excepteur id duis aliquip
                 enim esse veniam, Phasellus venenatis arim
-                purus, nec tempor leo ultrices ut</p>
+                purus, nec tempor leo ultrices ut</p> --}}
             </div>
             <div class="profile-actions">
                 <h2>Profile Link</h2>
