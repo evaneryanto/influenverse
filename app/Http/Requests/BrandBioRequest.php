@@ -22,7 +22,15 @@ class BrandBioRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'user_id' => 'required',
+            'company_name' => 'required',
+            'npwp'=> 'required',
+            'profil_pic_path' => 'image|mimes:png,jpg,jpeg,svg|max:10240',
+            'addres'=> 'required',
+            'phone_number'=> 'required',
+            'website'=> 'required',
+            'province_id'=> 'required',
+            'category_id'=> 'required',
         ];
     }
 }

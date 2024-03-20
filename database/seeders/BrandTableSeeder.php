@@ -13,9 +13,9 @@ class BrandTableSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('brands')->insert(
+        DB::table('brands')->insert([
         [
-            'user_id' =>'1',
+            'user_id' =>'2',
             'company_name' =>'Brand 01',
             'npwp'=>'123',
             'profil_pic_path'=>'profile01',
@@ -26,7 +26,7 @@ class BrandTableSeeder extends Seeder
             'category_id'=>'1',
         ],
         [
-            'user_id' =>'4',
+            'user_id' =>'6',
             'company_name' =>'Brand 02',
             'npwp'=>'122',
             'profil_pic_path'=>'Profile02',
@@ -37,7 +37,7 @@ class BrandTableSeeder extends Seeder
             'category_id'=>'2',
         ],
         [
-            'user_id' =>'6',
+            'user_id' =>'4',
             'company_name' =>'Brand 02',
             'npwp'=>'122',
             'profil_pic_path'=>'Profile02',
@@ -48,6 +48,6 @@ class BrandTableSeeder extends Seeder
             'category_id'=>'3',
         ],
 
-    );
+    ]);
 }
 }

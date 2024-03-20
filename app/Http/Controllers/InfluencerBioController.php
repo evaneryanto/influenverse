@@ -67,7 +67,7 @@ class InfluencerBioController extends Controller
 
             DB::beginTransaction();
 
-            $influncer = Influencer::create([
+                $influncer = Influencer::create([
                 'user_id' => $request->user_id,
                 'province_id' => $request->province_id,
                 'birth_date' => $request->birth_date,
