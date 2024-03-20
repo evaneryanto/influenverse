@@ -27,8 +27,8 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/fill_profile', [InfluencerProfileController::class, 'index'])->middleware(['auth', 'verified'])->name('fill_profile');
-Route::post('/fill_profile', [InfluencerProfileController::class, 'store']);
+//Route::get('/fill_profile', [InfluencerProfileController::class, 'index'])->middleware(['auth', 'verified'])->name('fill_profile');
+//Route::post('/fill_profile', [InfluencerProfileController::class, 'store']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/login_influencer', function () {

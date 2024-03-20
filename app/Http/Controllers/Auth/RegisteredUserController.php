@@ -41,6 +41,9 @@ class RegisteredUserController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
+
+         /** @var \App\Models\User $user **/
+
     public function store(Request $request): RedirectResponse
     {
 
@@ -77,6 +80,7 @@ class RegisteredUserController extends Controller
 
     public function handleProviderCallback($provider)
     {
+      
         $user = Socialite::driver($provider)->stateless()->user();
         $authUser = $this->findOrCreateUser($user, $provider);
         Auth::login($authUser, true);

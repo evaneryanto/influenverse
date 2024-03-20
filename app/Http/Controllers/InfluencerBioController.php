@@ -14,9 +14,7 @@ use Illuminate\Support\Facades\Storage;
 class InfluencerBioController extends Controller
 {
     public function index()
-    {   
-        
-       
+    {
         $provinces = Province::get(['id', 'name']);
         $logged_in_user_id = auth()->user()->id;
         $user_data = DB::table('users')->where('id', $logged_in_user_id)->select('id', 'name', 'username', 'created_at')->first();
@@ -49,7 +47,7 @@ class InfluencerBioController extends Controller
         return response()->json($data);
 
         // return view('fill_profile', $data);
-        
+
     }
 
 
@@ -59,7 +57,7 @@ class InfluencerBioController extends Controller
             $categories = $request->input('categories');
 
             $profile_pict_path = null;
-    
+
             if($request->hasFile('profile_picture_path')){
                 $file = $request->file('profile_picture_path');
                 $image_name = time() . '.' . $file->getClientOriginalExtension();
@@ -68,7 +66,7 @@ class InfluencerBioController extends Controller
             }
 
             DB::beginTransaction();
-            
+
             $influncer = Influencer::create([
                 'user_id' => $request->user_id,
                 'province_id' => $request->province_id,
@@ -80,20 +78,20 @@ class InfluencerBioController extends Controller
                 'phone_number' => $request->phone_number,
                 'profile_picture_path' => $profile_pict_path
             ]);
-    
+
             $influncer->categories()->attach($categories);
 
             DB::commit();
-    
+
             // return redirect('/dashboard');
-    
+
             return response()->json($influncer);
 
         } catch(\Throwable $th) {
             DB::rollBack();
             return response()->json($th->getMessage());
         }
-     
+
 
     }
 
@@ -127,7 +125,7 @@ class InfluencerBioController extends Controller
         DB::beginTransaction();
 
         $influencer->categories()->sync($categories);
-        
+
         $user->update([
             'name' => $request->name
         ]);
@@ -158,7 +156,7 @@ class InfluencerBioController extends Controller
 
     public function  destroy(string $id)
     {
-        
+
         $influencer = Influencer::find($id);
 
         if(! Gate::allows('influencer_authorization', $influencer)){
@@ -176,5 +174,5 @@ class InfluencerBioController extends Controller
 
 
 
-        
+
 }
