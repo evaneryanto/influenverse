@@ -45,6 +45,7 @@ Route::middleware(['auth', 'can:check_influencer'])->group(function () {
     // Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     // Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
+
     Route::get('/influencer/dashboard', function () {
         return view('dashboard');
     })->name('influencer.dashboard');
@@ -52,6 +53,7 @@ Route::middleware(['auth', 'can:check_influencer'])->group(function () {
 });
 
 
+//Route::get('/brand',);
 
 
 require __DIR__.'/auth.php';

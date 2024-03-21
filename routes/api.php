@@ -21,7 +21,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/login', [\App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'store']);
 Route::middleware('auth:sanctum')->post('/logout', [\App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'destroy']);
 
-Route::middleware('auth:sanctum')->get('/bio/brands',[\App\Http\Controllers\BrandCrontroller::class, 'index']);
+Route::get('/bio/brands',[\App\Http\Controllers\BrandCrontroller::class, 'index']);
+Route::post('/bio/brands',[\App\Http\Controllers\BrandCrontroller::class, 'store']);
+Route::post('/bio/brands/{id}',[\App\Http\Controllers\BrandCrontroller::class, 'update']);
 
 Route::middleware(['auth:sanctum', 'can:check_influencer'])->get('/bio/influencers', [\App\Http\Controllers\InfluencerBioController::class, 'index']);
 Route::middleware(['auth:sanctum', 'can:check_influencer'])->post('/bio/influencers', [\App\Http\Controllers\InfluencerBioController::class, 'store']);

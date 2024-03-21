@@ -5,12 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class CategoryInfluencer extends Model
+class Review_Brand extends Model
 {
     use HasFactory;
-    protected $table = 'category_influencer';
+
     protected $fillable = [
-        'category_id',
-        'influencer_id'
+        'review_brand_id',
+        'brand_id',
+        'influencer_id',
+        'rating',
+        'review',
     ];
 }
