@@ -252,14 +252,21 @@ body {
   display: flex;
 }
 
+.dashboard-content {
+  background-color: #417ECC; /* Warna background biru */
+  color: #fff; /* Warna teks putih */
+  padding: 15px 20px; /* Padding agar konten terlihat lebih baik */
+}
+
+/* Sidebar styling */
 .sidebar {
   position: sticky;
   top: 0;
   left: 0;
   bottom: 0;
-  width: 110px;
-  height: 130vh;
-  padding:  0 1.7rem;
+  width: 110px; /* Lebar sidebar pada layar besar */
+  height: 100vh;
+  padding: 0 1.7rem;
   color: #05cf05;
   overflow: hidden;
   transition: all 0.5s linear;
@@ -267,8 +274,21 @@ body {
 }
 
 .sidebar:hover {
-  width: 240px;
+  width: 240px; /* Lebar sidebar pada hover */
   transition: 0.5s;
+}
+
+/* Tambahkan aturan media queries untuk mengatur lebar sidebar pada layar yang lebih kecil */
+@media screen and (max-width: 992px) {
+  .sidebar {
+    width: 80px; /* Lebar sidebar pada layar yang lebih kecil */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar {
+    width: 60px; /* Lebar sidebar pada layar yang lebih kecil lagi */
+  }
 }
 
 .logo {
@@ -320,18 +340,11 @@ body {
   font-size: 1.2rem;
 }
 
-.keluar {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-}
-
-.main-content {
+.main-content1 {
   position: relative;
-  background: #fff;
   width: 100%;
   padding: 1rem;
+  background-color: #417ECC;
 }
 
 .header-wrapper img{
@@ -346,10 +359,10 @@ body {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  background: #fff;
   border-radius: 10px;
   padding: 10px 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1px;
+  background-color: #417ECC;
 }
 
 .header-title {
@@ -363,7 +376,7 @@ body {
 }
 
 .search-box {
-  background: rgba(237, 237, 237);
+  background: rgba(255, 255, 255, 0.933);
   border-radius: 15px;
   color: rgba(113, 99, 186, 255);
   display: flex;
@@ -390,7 +403,6 @@ body {
   transform: scale(1.3);
 }
 
-.settings-button, 
 .notification-button, 
 .profile-button {
   background-color: transparent;
@@ -402,35 +414,274 @@ body {
   margin-left: 10px;
 }
 
-.settings-button i {
-  font-size: 24px;
-  color: #333; 
-}
-
 .notification-button i {
   font-size: 24px;
-  color: #333; 
+  color: #ffffff; 
 }
-
 
 .profile-button i {
   font-size: 24px;
-  color: #333; 
+  color: #ffffff; 
 }
 
-
-
-
-/* Style the main content area */
-.hero {
-  text-align: left;
+.center-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 69vh;
+  text-align: center;
+  background-color: #fff;
+  margin: 10px -16px -16px;
 }
 
-.hero h1 {
-  font-size: 2em;
+.center-content img {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+.center-content h1 {
+  font-size: 32px;
   margin-bottom: 10px;
 }
 
-.hero p {
-  font-size: 1.2em;
+.center-content p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.new-project-button {
+  background-color: #417ECC;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.new-project-button:hover {
+  background-color: #315E99;
+}
+
+
+/*COBA BUTTON NEW PROJECT UNTUK POP UP*/
+.new-project-button {
+  background-color: #417ECC;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.new-project-button:hover {
+  background-color: #315E99;
+}
+
+/*pop up make project*/
+.popup-container {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.popup-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 45px;
+  border: 1px solid #888;
+  width: 70%; /* Mengatur lebar popup */
+  max-width: 800px; /* Mengatur lebar maksimum popup */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Additional styling for the form layout */
+.popup-content hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: none;
+  border-top: 1px solid #ccc;
+}
+
+.popup-content h1 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.popup-content h1 i {
+  color: #315E99;
+  margin-right: 5px;
+}
+
+.popup-content .form-left,
+.popup-content .form-right {
+  display: inline-block;
+  vertical-align: top;
+  width: 45%;
+  
+}
+
+.popup-content .form-right {
+  margin-left: 55px;
+}
+
+.popup-content .upload-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Posisikan elemen ke tengah secara horizontal */
+  justify-content:center; /* Posisikan elemen ke bawah */
+  padding: 20px;
+  border: 2px #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 800px; /* Mengatur lebar maksimum popup */
+  height: 52vh; /* Mengatur tinggi popup menjadi 80% dari tinggi viewport */
+  overflow-y: auto;
+}
+
+.popup-content .criteria-section {
+  margin-top: 20px;
+}
+
+.popup-content .criteria-section .category,
+.popup-content .criteria-section .gender {
+  display: inline-block;
+  vertical-align: top;
+  width: 45%;
+}
+
+/* Apply background color to input fields */
+.popup-content input[type="text"],
+.popup-content input[type="file"],
+.popup-content input[type="date"],
+.popup-content select[id="inf-category"],
+.popup-content select[id="location"],
+.popup-content select[id="gender"],
+.popup-content select[id="platform"] {
+  background-color: #F3F4F6;
+  padding: 5px;
+  border-radius: 5px;
+  width: 300px; 
+
+}
+
+.popup-content input[type="text"]:focus,
+.popup-content input[type="file"]:focus,
+.popup-content input[type="date"]:focus,
+.popup-content select[id="inf-category"]:focus,
+.popup-content select[id="location"]:focus,
+.popup-content select[id="gender"]:focus,
+.popup-content select[id="platform"]  {
+  outline: none;
+  border-color: #417ECC;
+}
+
+.popup-content label {
+  display: block;
+  margin-bottom: -10px;
+  font-weight: 500;
+}
+
+.upload-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #315E99;
+}
+
+.upload-link i {
+  font-size: 80px; /* Ukuran ikon besar */
+  margin-bottom: 50px; /* Jarak antara ikon dan teks */
+  color: #315E99; /* Warna ikon biru */
+}
+
+.upload-link span {
+  color: black; /* Warna teks hitam */
+}
+
+.form-criteria {
+  width: 45%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.form-right {
+  width: 450%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.ProjectBudget {
+  width: 45%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.button-container {
+  text-align: right;
+}
+
+.cancel-button {
+  background-color: #fff;
+  color: #315E99;
+  padding: 10px 20px;
+  border: 1px solid #315E99;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.next-button {
+  background-color: #315E99;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 30px;
+}
+
+/* Adjustments for smaller screens */
+@media only screen and (max-width: 768px) {
+  .popup-content .form-left,
+  .popup-content .form-right {
+      width: 100%;
+  }
+
+  .popup-content .form-right {
+      margin-left: 0;
+  }
+
+  .popup-content .upload-section {
+      margin-top: 20px;
+  }
+
+  .popup-content .criteria-section .category,
+  .popup-content .criteria-section .gender {
+      width: 100%;
+  }
 }

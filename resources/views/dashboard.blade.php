@@ -4,12 +4,20 @@
    
     @include('layouts.sidebar')
 
-    <div class="main-content">
+    <div class="main-content1">
     @include('layouts.navigasidasbh')
+    
+
+
+
 
         <!-- Content below the dashboard -->
         <div class="dashboard-content">
             <h2>Your Dashboard Content Goes Here</h2>
             <p>This is where you can add various widgets, charts, or other elements for your dashboard.</p>
         </div>
+             
+        @include('layouts.makeproject')
+
+    </div>
     </div>
