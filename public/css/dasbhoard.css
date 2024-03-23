@@ -340,6 +340,18 @@ body {
   font-size: 1.2rem;
 }
 
+
+.keluar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+#logout-form a:hover {
+  cursor: pointer;
+}
+
 .main-content1 {
   position: relative;
   width: 100%;

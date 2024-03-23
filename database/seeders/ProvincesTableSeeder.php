@@ -47,7 +47,7 @@ class ProvincesTableSeeder extends Seeder
             ['name' => 'Maluku Utara', 'id' => 32],
             ['name' => 'Papua Barat', 'id' => 33],
             ['name' => 'Papua', 'id' => 34]
-            
+
         ])->each(fn ($province) => \App\Models\Province::create($province));
     }
 }
