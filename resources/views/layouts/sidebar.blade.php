@@ -5,13 +5,13 @@
             <img src="company_logo.png" alt="Influencer">
         </div>
         <ul class="menu">
-            <li class="active">
+            <li class="{{ Request::routeIs('influencer.dashboard') ? 'active' : '' }}">
                 <a href="{{ route('influencer.dashboard') }}">
                     <i class="fas fa-tachometer-alt"></i>
                     <span>Dasboard</span>
                 </a>
             </li>
-            <li>
+            <li class="{{ Request::routeIs('influencer.profile.edit') ? 'active' : '' }}">
                 <a href="{{ route('influencer.profile.edit') }}" >
                 <i class="fas fa-user"></i>
                 <span>Profile</span>
