@@ -15,7 +15,8 @@ class BrandCrontroller extends Controller
         //$logged_in_user_id = auth()->user()->id;
         $brand_data = DB::table('brands')
                         ->join('provinces','provinces.id','=','brands.province_id')
-                        ->join('categories','categories.id','=','brands.category_id')
+                        ->join('category_brand','category_brand.brand_id','=','brands.user_id')
+                        ->join('categories','categories.id','=','category_brand.category_id')
                             ->select('brands.company_name','brands.npwp','brands.addres','brands.phone_number','brands.website','brands.profil_pic_path','provinces.name as province','categories.name as brand_category')
                                 ->get();
 
@@ -48,7 +49,6 @@ class BrandCrontroller extends Controller
         $brand->website = $request->website;
         $brand->profil_pic_path = $profile_pict_path;
         $brand->province_id = $request->province_id;
-        $brand->category_id = $request->category_id;
 
         $brand->save();
 
@@ -85,7 +85,6 @@ class BrandCrontroller extends Controller
         $brand->website = $request->website;
         $brand->profil_pic_path = $profile_pict_path;
         $brand->province_id = $request->province_id;
-        $brand->category_id = $request->category_id;
 
         $brand->update();
 

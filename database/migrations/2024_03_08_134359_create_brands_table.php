@@ -21,11 +21,9 @@ return new class extends Migration
             $table->string('website');
             $table->string('profil_pic_path');
             $table->unsignedBigInteger('province_id');
-            $table->unsignedBigInteger('category_id');
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('province_id')->references('id')->on('provinces')->onDelete('cascade');
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
         });
     }
 

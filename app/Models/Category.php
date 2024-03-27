@@ -19,4 +19,8 @@ class Category extends Model
     {
         return $this->belongsToMany(Influencer::class);
     }
+
+    public function brand(){
+        return $this->belongsToMany(Brand::class,'brands');
+    }
 }
