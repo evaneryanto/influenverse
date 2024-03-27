@@ -11,11 +11,9 @@ class CategoryBrand extends Model
 
     protected $table = 'category_brand';
     protected $fillable = [
+        'brand_id',
         'category_id',
-        'brand_id'
     ];
 
-    public function brand(){
-        return $this->belongsToMany(Brand::class,'category_brand');
-    }
+
 }

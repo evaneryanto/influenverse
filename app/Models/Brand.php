@@ -20,7 +20,6 @@ class Brand extends Model
         'phone_number',
         'website',
         'province_id',
-        'category_id',
     ];
 
     public function review_brands(): HasMany
@@ -37,7 +36,7 @@ class Brand extends Model
     }
 
     public function category(){
-        return $this->belongsToMany(Category::class,'category_brand');
+        return $this->hasMany(Category::class,'category_brand');
     }
 
 }
